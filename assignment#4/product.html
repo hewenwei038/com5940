@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    {% for item in dataset %}
+    {% if loop.index == 1 %}{% set counter = ( counter | default(1) ) %}{% endif %}
+    {% if counter == 1 %}<div class="card-columns">{% endif %}
+    <div class="card shadow-sm text-center">
+      <img src="{{ item['picurl'] }}" class="card-img-top" style="width:249px;height:203px;" >
+      <div class="card-body">
+        <h5 class="card-title">{{ item['name'] }}</h5>
+        <h1 class="card-title pricing-card-title"> {{ item['price'] }} <small class="text-muted">/ per</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Rating：{{ item['ranking'] }} star</li>
+          <li>Product Code:{{ item['productID'] }}</li>
+          <li>Stock Quantity：{{ item['quantity'] }}</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Add to Cart</button>
+      </div>
+    </div>
+    {% if counter == 3 %}</div><!--end row-->{%  set counter = ( counter | default(1) ) %}{% else %}{% set counter = ( counter | default(0) ) + 1 %}{% endif %}
+    {% endfor %} 
+  </div>
+
+{% endblock %}
