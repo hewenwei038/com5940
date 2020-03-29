@@ -7,16 +7,14 @@
   {% if counter == 1 %}<div class="card-columns">{% endif %}
   <div class="card shadow-sm text-center">
     <div class="card-body">
-      <h5 class="card-title">Chocolate Bar</h5>
+      <h5 class="card-title">{{ products.Bar_Name }}</h5>
       <ul class="list-unstyled mt-3 mb-4">
-        <li>ProductID：{{ item['productID'] }}</li>
-        <li>Company：{{ item['Company'] }}</li>
-        <li>Company：{{ item['Bar_Name'] }}</li>
-        <li>Review Date：{{ item['Review_Date'] }}</li>
-        <li>Cocoa Percent：{{ item['Cocoa_Percent'] }}</li>
-        <li>Company Location:{{ item['Company_Location'] }}</li>
-        <li>Rating：{{ item['Rating'] }}</li>
-        <li>Bean Type：{{ item['Bean_Type'] }}</li>
+        <li>ProductID：{{ products.productID }}</li>
+        <li>Review Date：{{ products.Review_Date }}</li>
+        <li>Cocoa Percent：{{ products.Cocoa_Percent }}</li>
+        <li>Company Location:{{ products.Company_Location}}</li>
+        <li>Rating：{{ products.Rating }}</li>
+        <li>Bean Type：{{ products.Bean_Type }}</li>
       </ul>
       <button type="button" class="btn btn-lg btn-block btn-outline-primary">Know More</button>
     </div>
